@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stream-feature-store"
+version = "0.1.0"
+description = "Lightweight streaming feature engineering + point-in-time feature store for real-time ML."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Akshay GC" }]
+keywords = [
+    "mlops",
+    "feature-store",
+    "streaming",
+    "feature-engineering",
+    "point-in-time",
+    "real-time-ml",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "fastapi",
+    "uvicorn",
+    "joblib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "ruff"]
+
+[project.scripts]
+featurestore = "featurestore.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/akshaygc/stream-feature-store"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
