@@ -1,5 +1,7 @@
 # stream-feature-store
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akshay-birla-03/stream-feature-store/blob/main/notebooks/Run_in_Colab.ipynb)
+
 A lightweight **streaming feature engineering + feature store** library for
 real-time ML. It ingests an event stream, maintains **windowed aggregate
 features** (count / sum / mean / max / min / distinct-count over sliding and
